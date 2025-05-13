@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3x3 OLL Algorithms</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    pre {
+      white-space: pre-wrap; /* Allows wrapping */
+    }
+    #clearBtn {
+      font-size: 125%;
+    }
+    .oll-case {
+      margin-bottom: 1.5rem;
+    }
+    .oll-case img {
+      max-width: 200px;
+      height: auto;
+    }
+    .oll-case .card-header {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="text-center">
+  <div id="vueApp">
+    <navbar></navbar>
+  </div>
+
+  <div id="ollContainer" class="container py-5">
+    <h1 class="mb-4 text-center">My 3x3 OLL Algorithms :)</h1>
+
+    <div class="mb-4 text-center position-relative w-50 mx-auto">
+      <input
+        type="text"
+        id="searchInput"
+        class="form-control pe-5"
+        placeholder="Search..."
+        onkeyup="filterCases()"
+        oninput="toggleClearButton()"
+      />
+      <button
+        id="clearBtn"
+        class="btn btn-close btn-outline-secondary position-absolute top-50 end-0 translate-middle-y me-1 d-none"
+        onclick="clearSearch()"
+        aria-label="Clear search"
+        style="z-index: 1;"
+      >
+      </button>
+    </div>
+  </div>
+
+  <!-- Import library -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/vue@3"></script>
+
+  <!-- Vue Component -->
+  <script src="navbar.js"></script>
+
+  <!-- Content Data -->
+  <script src="data/oll.js"></script>
+
+  <!-- Custom Script -->
+  <script>
+    // START OF RENDER OLL
+    function createCard(caseData) {
+      const card = document.createElement('div');
+      card.className = 'card oll-case mb-4';
+
+      const algs = [caseData.algorithm, caseData.algorithm2]
+        .filter(Boolean)
+        .map(alg => `<pre class="bg-light p-2">${alg}</pre>`)
+        .join('');
+
+      card.innerHTML = `
+        <div class="card-header bg-primary text-white">
+          ${caseData.name}
+        </div>
+        <div class="card-body">
+          <p><strong>Setup:</strong></p>
+          <pre class="bg-light p-2">${caseData.setup}</pre>
+          <p><strong>Algorithm:</strong></p>
+          ${algs}
+          <p><strong>Visual:</strong></p>
+          <img src="${caseData.image}" alt="${caseData.name}" class="img-fluid rounded" />
+          <p class="mt-2"><em>Image: "${caseData.name} from SpeedCubeDB" – <a href="${caseData.source}" target="_blank">${caseData.source}</a></em></p>
+        </div>
+      `;
+      return card;
+    }
+
+    function renderOLL() {
+      const container = document.getElementById('ollContainer');
+      ollCases.forEach(item => {
+        const card = createCard(item);
+        container.appendChild(card);
+      });
+    }
+
+    renderOLL();
+    // END OF RENDER OLL
+
+    function filterCases() {
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toLowerCase();
+      const cards = document.querySelectorAll('.oll-case');
+
+      cards.forEach(card => {
+        const textContent = card.textContent.toLowerCase();
+        const match = textContent.includes(filter);
+        card.style.display = match ? '' : 'none';
+
+        // Remove previous highlights
+        card.querySelectorAll('mark').forEach(mark => {
+          const parent = mark.parentNode;
+          parent.replaceChild(document.createTextNode(mark.textContent), mark);
+          parent.normalize();
+        });
+
+        // Highlight matches
+        if (filter && match) {
+          const walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT, null);
+          while (walker.nextNode()) {
+            const node = walker.currentNode;
+            if (node.nodeValue.toLowerCase().includes(filter)) {
+              const span = document.createElement('span');
+              span.innerHTML = node.nodeValue.replace(new RegExp(`(${filter})`, 'gi'), '<mark>$1</mark>');
+              node.parentNode.replaceChild(span, node);
+            }
+          }
+        }
+      });
+
+      toggleClearButton();
+    }
+
+    function clearSearch() {
+      const input = document.getElementById('searchInput');
+      input.value = '';
+      filterCases();
+      toggleClearButton();
+      input.focus();
+    }
+
+    function toggleClearButton() {
+      const input = document.getElementById('searchInput');
+      const clearBtn = document.getElementById('clearBtn');
+      clearBtn.classList.toggle('d-none', input.value === '');
+    }
+  </script>
+</body>
+</html>
