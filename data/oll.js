@@ -19,7 +19,8 @@ const ollCases = [
     id: "oll23",
     name: "OLL 23",
     setup: "R U2' R D R' U2' R D' R2'",
-    algorithm: "R2 D R' U2 R D' R' U2 R'",
+    algorithm: "R' F2 R U2 R U2 R' F2 R U2 R'",
+    algorithm2: "R2 D R' U2 R D' R' U2 R'",
     image: "image/oll/oll-23.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_23"
   },
