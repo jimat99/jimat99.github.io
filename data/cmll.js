@@ -72,7 +72,7 @@ const cmllCases = [
     algorithm: "<b>(Jb-perm):</b>\nR U2 R' U' R U2 L' U R' U' L",
     algorithm2: "<b>(T-perm):</b>\nR U R' U' R' F R2 U' R' U' R U R' F'",
     recognize: "If there is a headlight, put it on the left, then do the Jb-perm or T-perm",
-    image: "image/cmll/cp1.PNG",
+    image: "image/cmll/cp-1.PNG",
     source: "https://cube.rider.biz/visualcube.php"
   },
   {
@@ -81,7 +81,7 @@ const cmllCases = [
     setup: "F R' F' R U R U' R' F R U' R' U R U R' F'",
     algorithm: "<b>(Y-perm):</b>\nF R U' R' U' R U R' F' R U R' U' R' F R F'",
     recognize: "If there is no headlight, then do the Y-perm",
-    image: "image/cmll/cp2.PNG",
+    image: "image/cmll/cp-2.PNG",
     source: "https://cube.rider.biz/visualcube.php"
   },
 ];
