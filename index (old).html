@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3x3 PLL Algorithms</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    pre {
+      white-space: pre-wrap; /* Allows wrapping */
+    }
+    #clearBtn {
+      font-size: 125%;
+    }
+    .pll-case {
+      margin-bottom: 1.5rem;
+    }
+    .pll-case img {
+      max-width: 200px;
+      height: auto;
+    }
+    .pll-case .card-header {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="text-center">
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">My 3x3 PLL Algorithms :)</h1>
+
+    <div class="mb-4 text-center position-relative w-50 mx-auto">
+      <input
+        type="text"
+        id="searchInput"
+        class="form-control pe-5"
+        placeholder="Search..."
+        onkeyup="filterCases()"
+        oninput="toggleClearButton()"
+      />
+      <button
+        id="clearBtn"
+        class="btn btn-close btn-outline-secondary position-absolute top-50 end-0 translate-middle-y me-1 d-none"
+        onclick="clearSearch()"
+        aria-label="Clear search"
+        style="z-index: 1;"
+      >
+      </button>
+    </div>
+
+    <!-- Aa Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Aa Permutation (A-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps three corners counter-clockwise and swaps two adjacent edges.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">x R2' D2' R U R' D2' R U' R x'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">x R' U R' D2 R U' R' D2 R2 x'</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/aa.PNG"
+          alt="Aa Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Aa perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Aa">https://speedcubedb.com/a/3x3/PLL/Aa</a></em></p>
+      </div>
+    </div>
+
+    <!-- Ab Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Ab Permutation (A-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps three corners clockwise and swaps two adjacent edges.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">x R' U R' D2' R U' R' D2' R2' x'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">y' x L U' L D2 L' U L D2 L2</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/ab.PNG"
+          alt="Ab Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Ab perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Ab">https://speedcubedb.com/a/3x3/PLL/Ab</a></em></p>
+      </div>
+    </div>
+
+    <!-- E Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        E Permutation (E-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Diagonally swaps all 4 corner pieces and 4 edge pieces in an "X" shape.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">x' D R U R' D' R U' R' D R U' R' D' R U R' x y'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">z U2 R2 F (R U R' U' R U R' U' R U R' U') F' R2 U2 z'</pre>
+        <pre class="bg-light p-2">R2 U F' (R' U R U' R' U R U' R' U R U') F U' R2</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/e.PNG"
+          alt="E Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "E perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/E">https://speedcubedb.com/a/3x3/PLL/E</a></em></p>
+      </div>
+    </div>
+
+    <!-- F Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        F Permutation (F-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps two corners diagonally and two edges adjacent to those corners.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">R' U' R U' R' U R U R2' F' R U R U' R' F U R y'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">y R' U' F' (R U R' U' R' F R2 U' R' U' R U R') U R</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/f.PNG"
+          alt="F Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "F perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/F">https://speedcubedb.com/a/3x3/PLL/F</a></em></p>
+      </div>
+    </div>
+
+    <!-- Ga Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Ga Permutation (G-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps three corners and three edges in various configurations.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">R' U' R D' U R2' U R' U R U' R U' R2' D</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">y' M' U2 M U' (R U2 R' U' R U2 L' U R' U' L) U M' U2 M</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/ga.PNG"
+          alt="Ga Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Ga perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Ga">https://speedcubedb.com/a/3x3/PLL/Ga</a></em></p>
+      </div>
+    </div>
+
+    <!-- Gb Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Gb Permutation (G-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps three corners and three edges in various configurations.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">R2' U R' U R' U' R U' R2' D U' R' U R D'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">y2 M' U2 M (R U2 R' U' R U2 L' U R' U' L) M' U2 M</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/gb.PNG"
+          alt="Gb Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Gb perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Gb">https://speedcubedb.com/a/3x3/PLL/Gb</a></em></p>
+      </div>
+    </div>
+
+    <!-- Gc Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Gc Permutation (G-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps three corners and three edges in various configurations.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">D' R U R' U' D R2' U' R U' R' U R' U R2'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">y' M' U2 M U (L' U2 L U L' U2 R U' L U R') U' M' U2 M</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/gc.PNG"
+          alt="Gc Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Gc perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Gc">https://speedcubedb.com/a/3x3/PLL/Gc</a></em></p>
+      </div>
+    </div>
+
+    <!-- Gd Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Gd Permutation (G-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps three corners and three edges in various configurations.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">R2' U' R U' R U R' U R2' D' U R U' R' D</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">M' U2 M (L' U2 L U L' U2 R U' L U R') M' U2 M</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/gd.PNG"
+          alt="Gd Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Gd perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Gd">https://speedcubedb.com/a/3x3/PLL/Gd</a></em></p>
+      </div>
+    </div>
+
+    <!-- H Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        H Permutation (H-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps opposite edge pairs (all 4 edges in two opposite pairs).</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">M2' U' M2' U2' M2' U' M2'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">M2 U' M2 U2 M2 U' M2</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/h.PNG"
+          alt="H Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "H perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/H">https://speedcubedb.com/a/3x3/PLL/H</a></em></p>
+      </div>
+    </div>
+
+    <!-- Ja Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Ja Permutation (J-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps two adjacent corners and two adjacent edges (mirror of Jb).</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">L' R' U2' R U R' U2' L U' R y'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">L' U2 L U L' U2 R U' L U R'</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/ja.PNG"
+          alt="Ja Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Ja perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Ja">https://speedcubedb.com/a/3x3/PLL/Ja</a></em></p>
+      </div>
+    </div>
+
+    <!-- Jb Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Jb Permutation (J-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps two adjacent corners and two adjacent edges (mirror of Ja).</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">R U R2' F' R U R U' R' F R U' R'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">R U2 R' U' R U2 L' U R' U' L</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/jb.PNG"
+          alt="Jb Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Jb perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Jb">https://speedcubedb.com/a/3x3/PLL/Jb</a></em></p>
+      </div>
+    </div>
+
+    <!-- Na Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Na Permutation (N-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps two diagonally opposite corners and two pairs of adjacent edges (mirror of Nb).</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">R U R' U2' R U R2' F' R U R U' R' F R U' R' U' R U' R'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">R U R' U (R U2 R' U' R U2 L' U R' U' L) U' R U' R'</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/na.PNG"
+          alt="Na Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Na perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Na">https://speedcubedb.com/a/3x3/PLL/Na</a></em></p>
+      </div>
+    </div>
+
+    <!-- Nb Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Nb Permutation (N-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps two diagonally opposite corners and two pairs of adjacent edges (mirror of Na).</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">F r' F' r U r U' r2' D' F r U r' F' D r</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">L' U' L U' (L' U2 L U L' U2 R U' L U R') U L' U L
+</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/nb.PNG"
+          alt="Nb Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Nb perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Nb">https://speedcubedb.com/a/3x3/PLL/Nb</a></em></p>
+      </div>
+    </div>
+
+    <!-- Ra Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Ra Permutation (R-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps three corners and swaps one edge with another (mirror of Rb).</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">R U2' R D R' U R D' R' U' R' U R U R' y'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">y R U R' F' R U2 R' U2 R' F R U R U2 R'</pre>
+        <pre class="bg-light p-2">M U2 M' U' (R U2 R' U' R U2 L' U R' U' L) U M U2 M'</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/ra.PNG"
+          alt="Ra Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Ra perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Ra">https://speedcubedb.com/a/3x3/PLL/Ra</a></em></p>
+      </div>
+    </div>
+
+    <!-- Rb Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Rb Permutation (R-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps three corners and swaps one edge with another (mirror of Ra).</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">R' U R U R' U' R' D' R U R' D R U2' R</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">R' U2 R U2 R' F R U R' U' R' F' R2</pre>
+        <pre class="bg-light p-2">M U2 M' U (L' U2 L U L' U2 R U' L U R') U' M U2 M'</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/rb.PNG"
+          alt="Rb Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Rb perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Rb">https://speedcubedb.com/a/3x3/PLL/Rb</a></em></p>
+      </div>
+    </div>
+
+    <!-- T Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        T Permutation (T-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps two adjacent corners and two adjacent edges.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">F R U' R' U R U R2' F' R U R U' R'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">R U R' U' R' F R2 U' R' U' R U R' F'</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/t.PNG"
+          alt="T Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "T perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/T">https://speedcubedb.com/a/3x3/PLL/T</a></em></p>
+      </div>
+    </div>
+ 
+    <!-- Ua Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Ua Permutation (U-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps three edge pieces clockwise.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">M2' U' M' U2' M U' M2'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">y2 F2 U' L R' F2 L' R U' F2</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/ua.PNG"
+          alt="Ua Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Ua perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Ua">https://speedcubedb.com/a/3x3/PLL/Ua</a></em></p>
+      </div>
+    </div>
+ 
+    <!-- Ub Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Ub Permutation (U-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps three edge pieces counterclockwise.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">M2' U M' U2' M U M2'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">y2 F2 U L R' F2 L' R U F2</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/ub.PNG"
+          alt="Ub Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Ub perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Ub">https://speedcubedb.com/a/3x3/PLL/Ub</a></em></p>
+      </div>
+    </div>
+
+    <!-- V Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        V Permutation (V-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps three corners and swaps one edge with another.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">D2' R' U R D' R2' U' R' U R' U R' D' R U2' R'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">M' U2 M (F R U' R' U' R U R' F' R U R' U' R' F R F') M' U2 M</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/v.PNG"
+          alt="V Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "V perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/V">https://speedcubedb.com/a/3x3/PLL/V</a></em></p>
+      </div>
+    </div>
+
+    <!-- Y Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Y Permutation (Y-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps three corners and swaps one edge with another.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">F R' F' R U R U' R' F R U' R' U R U R' F'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">F R U' R' U' R U R' F' R U R' U' R' F R F'</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/y.PNG"
+          alt="Y Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Y perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Y">https://speedcubedb.com/a/3x3/PLL/Y</a></em></p>
+      </div>
+    </div>
+
+    <!-- Z Permutation -->
+    <div class="card pll-case">
+      <div class="card-header bg-primary text-white">
+        Z Permutation (Z-Perm)
+      </div>
+      <div class="card-body">
+        <p><strong>Goal:</strong> Swaps two pairs of opposite edge pieces.</p>
+        <p><strong>Setup:</strong></p>
+        <pre class="bg-light p-2">M U2' M2' U2' M U' M2' U' M2'</pre>
+        <p><strong>Algorithm:</strong></p>
+        <pre class="bg-light p-2">y M2 U' M2 U' M' U2 M2 U2 M' U2</pre>
+        <p><strong>Visual:</strong></p>
+        <img
+          src="pll-image/z.PNG"
+          alt="Z Perm"
+          class="img-fluid rounded"
+        />
+        <p class="mt-2"><em>Image: "Z perm from SpeedCubeDB" – <a href="https://speedcubedb.com/a/3x3/PLL/Z">https://speedcubedb.com/a/3x3/PLL/Z</a></em></p>
+      </div>
+    </div>
+ 
+    <!-- Repeat for the other 19 PLL cases -->
+ 
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function filterCases() {
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toLowerCase();
+      const cards = document.querySelectorAll('.pll-case');
+
+      cards.forEach(card => {
+        const textContent = card.textContent.toLowerCase();
+        const match = textContent.includes(filter);
+        card.style.display = match ? '' : 'none';
+
+        // Remove previous highlights
+        card.querySelectorAll('mark').forEach(mark => {
+          const parent = mark.parentNode;
+          parent.replaceChild(document.createTextNode(mark.textContent), mark);
+          parent.normalize();
+        });
+
+        // Highlight matches
+        if (filter && match) {
+          const walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT, null);
+          while (walker.nextNode()) {
+            const node = walker.currentNode;
+            if (node.nodeValue.toLowerCase().includes(filter)) {
+              const span = document.createElement('span');
+              span.innerHTML = node.nodeValue.replace(new RegExp(`(${filter})`, 'gi'), '<mark>$1</mark>');
+              node.parentNode.replaceChild(span, node);
+            }
+          }
+        }
+      });
+
+      toggleClearButton();
+    }
+
+    function clearSearch() {
+      const input = document.getElementById('searchInput');
+      input.value = '';
+      filterCases();
+      toggleClearButton();
+      input.focus();
+    }
+
+    function toggleClearButton() {
+      const input = document.getElementById('searchInput');
+      const clearBtn = document.getElementById('clearBtn');
+      clearBtn.classList.toggle('d-none', input.value === '');
+    }
+  </script>
+</body>
+</html>
