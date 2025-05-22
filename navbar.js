@@ -12,6 +12,7 @@ vueApp.component('navbar', {
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="index.html">PLL</a></li>
             <li class="nav-item"><a class="nav-link" href="oll.html">OLL</a></li>
+            <li class="nav-item"><a class="nav-link" href="first-block.html">First Block</a></li>
             <li class="nav-item"><a class="nav-link" href="cmll.html">CMLL</a></li>
           </ul>
         </div>
