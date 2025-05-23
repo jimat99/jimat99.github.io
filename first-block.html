@@ -32,6 +32,16 @@
     .section-title {
       background-color: #e6f7f1;
     }
+    /* START of Responsive algorithm  text */
+    .algorithm-text {
+      font-size: 14px; /* mobile */
+    }
+    @media (min-width: 992px) {
+      .algorithm-text {
+        font-size: 20px; /* desktops */
+      }
+    }
+    /* END of Responsive algorithm text */
   </style>
 </head>
 <body class="text-center">
@@ -42,44 +52,48 @@
   <div id="cmllContainer" class="container py-5">
     <h1 class="mb-4 text-center">My 3x3 First Block Roux :)</h1>
 
-    <div class="mb-4 text-center position-relative w-50 mx-auto">
-      <input
-        type="text"
-        id="searchInput"
-        class="form-control pe-5"
-        placeholder="Search..."
-        onkeyup="filterCases()"
-        oninput="toggleClearButton()"
-      />
-      <button
-        id="clearBtn"
-        class="btn btn-close btn-outline-secondary position-absolute top-50 end-0 translate-middle-y me-1 d-none"
-        onclick="clearSearch()"
-        aria-label="Clear search"
-        style="z-index: 1;"
-      >
-      </button>
-    </div>
-
     <!-- First block explanation -->
     <h2 class="section-title mt-3">First Block</h2>
     <div>
-      <p class="mb-0">The goal of First Block (FB) is to solve a 2x3x1 block on the left side of the cube as shown in the image below.</p>
+      <p class="mb-0">
+        The goal of First Block (FB) is to solve a 2x3x1 block on the left side of the cube as shown in the image below.
+      </p>
+
+      <p class="text-danger"><b>Notice that I used blue as the front layer.</b></p>
 
       <img src="image/cmll/block/first-block-front-left.png" alt="" style="width: 150px;">
       <img src="image/cmll/block/first-block-bottom.png" alt="" style="width: 150px;">
       <p class="mt-0"><em>Image from: <a href="https://cube.rider.biz/visualcube.php" target="_blank">https://cube.rider.biz/visualcube.php</a></em></p>
     </div>
 
-    <!-- Pair Insertions -->
-    <h2 id="coSectionTitle" class="section-title mt-3">Pair Insertions</h2>
+    <!-- Basic Pair Insertions -->
+    <h2 id="basicPairSectionTitle" class="section-title mt-3">Basic Pair Insertions</h2>
     <div>
-      <p class="mb-0">For you that are coming from CFOP, the pair insertion is similar to F2L, but with more flexibility to use the <code>M, r/Rw, l/Lw</code> moves.</p>
+      <p>
+        For us that are coming from CFOP, the pair insertion is similar to F2L, but with more flexibility to use the <code>M, r/Rw, l/Lw</code> moves. Here I show the basic insertions, which the other case can be solved intuitively after we learn all of these basic insertions.
+      </p>
 
-      <img src="image/cmll/cmll-first.png" alt="" style="width: 125px;">
-      <i class="fas fa-arrow-right-long fa-2x"></i>
-      <img src="image/cmll/cmll-orientation.png" alt="" style="width: 125px;">
-      <p class="mt-0"><em>Image from: <a href="https://tutorial.rouxers.com/beginners/cmll.html" target="_blank">https://tutorial.rouxers.com/beginners/cmll.html</a></em></p>
+      <div class="row">
+        <div class="col-6 col-lg-3 border" style="border-width: medium !important;">
+          <img src="image/cmll/block/first-block-1.png" class="img-fluid w-75" alt="F2L Step">
+          <p><pre class="algorithm-text">l' U' l</pre></p>
+        </div>
+        <div class="col-6 col-lg-3 border" style="border-width: medium !important;">
+          <img src="image/cmll/block/first-block-2.png" class="img-fluid w-75" alt="F2L Step">
+          <p><pre class="algorithm-text">U' L' U L</pre></p>
+        </div>
+        <div class="col-6 col-lg-3 border" style="border-width: medium !important;">
+          <img src="image/cmll/block/first-block-3.png" class="img-fluid w-75" alt="F2L Step">
+          <p><pre class="algorithm-text">L' U' L</pre></p>
+        </div>
+
+        <div class="col-6 col-lg-3 border" style="border-width: medium !important;">
+          <img src="image/cmll/block/first-block-4.png" class="img-fluid w-75" alt="F2L Step">
+          <p><pre class="algorithm-text">M' l' U' l</pre></p>
+        </div>
+      </div>
+      
+      <p class="mt-0"><em>Image from: <a href="https://cube.rider.biz/visualcube.php" target="_blank">https://cube.rider.biz/visualcube.php</a></em></p>
     </div>
   </div>
 
@@ -92,112 +106,5 @@
 
   <!-- Content Data -->
   <script src="data/cmll.js"></script>
-
-  <!-- Custom Script -->
-  <script>
-    // START OF RENDER CMLL
-    function createCard(caseData) {
-      const card = document.createElement('div');
-      card.className = 'card cmll-case mb-4';
-
-      const algs = [caseData.algorithm, caseData.algorithm2]
-        .filter(Boolean)
-        .map(alg => `<pre class="bg-light p-2">${alg}</pre>`)
-        .join('');
-
-      card.innerHTML = `
-        <div class="card-header bg-primary text-white">
-          ${caseData.name}
-        </div>
-        <div class="card-body">
-          <p><strong>Setup:</strong></p>
-          <pre class="bg-light p-2">${caseData.setup}</pre>
-          <p><strong>Algorithm:</strong></p>
-          ${algs}
-          <p><strong>Recognize:</strong></p>
-          <pre class="bg-light p-2">${caseData.recognize}</pre>
-          <p><strong>Visual:</strong></p>
-          <img src="${caseData.image}" alt="${caseData.name}" class="img-fluid rounded" />
-          ${caseData.image2
-            ? `<b>OR</b>
-          <img src="${caseData.image2}" alt="${caseData.name}" class="img-fluid rounded" />`
-            : ''
-          }
-          <p class="mt-2 mb-0"><em>Image from: <a href="${caseData.source}" target="_blank">${caseData.source}</a></em></p>
-          ${caseData.image2 
-            ? `<p><em>Image from: <a href="${source2}" target="_blank">${source2}</a></em></p>` 
-            : ''
-          }
-          </div>
-      `;
-
-      return card;
-    }
-
-    function renderCMLL() {
-      const coSection = document.getElementById('coSection');
-      const cpSection = document.getElementById('cpSection');
-
-      cmllCases.forEach(item => {
-        const card = createCard(item);
-        if (item.type === 'CO') {
-          coSection.appendChild(card);
-        } else if (item.type === 'CP') {
-          cpSection.appendChild(card);
-        }
-      });
-    }
-
-    renderCMLL();
-    // END OF RENDER CMLL
-
-    function filterCases() {
-      const input = document.getElementById('searchInput');
-      const filter = input.value.toLowerCase();
-      const cards = document.querySelectorAll('.cmll-case');
-
-      cards.forEach(card => {
-        const textContent = card.textContent.toLowerCase();
-        const match = textContent.includes(filter);
-        card.style.display = match ? '' : 'none';
-
-        // Remove previous highlights
-        card.querySelectorAll('mark').forEach(mark => {
-          const parent = mark.parentNode;
-          parent.replaceChild(document.createTextNode(mark.textContent), mark);
-          parent.normalize();
-        });
-
-        // Highlight matches
-        if (filter && match) {
-          const walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT, null);
-          while (walker.nextNode()) {
-            const node = walker.currentNode;
-            if (node.nodeValue.toLowerCase().includes(filter)) {
-              const span = document.createElement('span');
-              span.innerHTML = node.nodeValue.replace(new RegExp(`(${filter})`, 'gi'), '<mark>$1</mark>');
-              node.parentNode.replaceChild(span, node);
-            }
-          }
-        }
-      });
-
-      toggleClearButton();
-    }
-
-    function clearSearch() {
-      const input = document.getElementById('searchInput');
-      input.value = '';
-      filterCases();
-      toggleClearButton();
-      input.focus();
-    }
-
-    function toggleClearButton() {
-      const input = document.getElementById('searchInput');
-      const clearBtn = document.getElementById('clearBtn');
-      clearBtn.classList.toggle('d-none', input.value === '');
-    }
-  </script>
 </body>
 </html>
