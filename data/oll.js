@@ -4,7 +4,7 @@ const ollCases = [
     name: "OLL 21",
     setup: "R U R' U R U' R' U R U2' R' y'",
     algorithm: "y F R U R' U' R U R' U' R U R' U' F'",
-    image: "image/oll/oll-21.PNG",
+    image: "image/cfop/oll/oll-21.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_21"
   },
   {
@@ -12,7 +12,7 @@ const ollCases = [
     name: "OLL 22",
     setup: "R' U2' R2' U R2' U R2' U2' R'",
     algorithm: "f R U R' U' f' F R U R' U' F'",
-    image: "image/oll/oll-22.PNG",
+    image: "image/cfop/oll/oll-22.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_22"
   },
   {
@@ -21,7 +21,7 @@ const ollCases = [
     setup: "R U2' R D R' U2' R D' R2'",
     algorithm: "R' F2 R U2 R U2 R' F2 R U2 R'",
     algorithm2: "R2 D R' U2 R D' R' U2 R'",
-    image: "image/oll/oll-23.PNG",
+    image: "image/cfop/oll/oll-23.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_23"
   },
   {
@@ -29,7 +29,7 @@ const ollCases = [
     name: "OLL 24",
     setup: "F R' F' r U R U' r'",
     algorithm: "r U R' U' r' F R F'",
-    image: "image/oll/oll-24.PNG",
+    image: "image/cfop/oll/oll-24.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_24"
   },
   {
@@ -37,7 +37,7 @@ const ollCases = [
     name: "OLL 25",
     setup: "R' F' r U R U' r' F y'",
     algorithm: "y F' r U R' U' r' F R",
-    image: "image/oll/oll-25.PNG",
+    image: "image/cfop/oll/oll-25.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_25"
   },
   {
@@ -45,7 +45,7 @@ const ollCases = [
     name: "OLL 26",
     setup: "R U R' U R U2' R' y'",
     algorithm: "R' U' R U' R' U2 R",
-    image: "image/oll/oll-26.PNG",
+    image: "image/cfop/oll/oll-26.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_26"
   },
   {
@@ -53,7 +53,7 @@ const ollCases = [
     name: "OLL 27",
     setup: "R U2' R' U' R U' R'",
     algorithm: "R U R' U R U2 R'",
-    image: "image/oll/oll-27.PNG",
+    image: "image/cfop/oll/oll-27.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_27"
   },
   {
@@ -61,7 +61,7 @@ const ollCases = [
     name: "OLL 28",
     setup: "R U R' U' M' U R U' r'",
     algorithm: "r U R' U' M U R U' R'",
-    image: "image/oll/oll-28.PNG",
+    image: "image/cfop/oll/oll-28.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_28"
   },
   {
@@ -69,7 +69,7 @@ const ollCases = [
     name: "OLL 33",
     setup: "F R' F' R U R U' R'",
     algorithm: "R U R' U' R' F R F'",
-    image: "image/oll/oll-33.PNG",
+    image: "image/cfop/oll/oll-33.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_33"
   },
   {
@@ -77,7 +77,7 @@ const ollCases = [
     name: "OLL 43",
     setup: "f' U' L' U L f",
     algorithm: "f' L' U' L U f",
-    image: "image/oll/oll-43.PNG",
+    image: "image/cfop/oll/oll-43.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_43"
   },
   {
@@ -85,7 +85,7 @@ const ollCases = [
     name: "OLL 44",
     setup: "f U R U' R' f'",
     algorithm: "f R U R' U' f'",
-    image: "image/oll/oll-44.PNG",
+    image: "image/cfop/oll/oll-44.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_44"
   },
   {
@@ -93,7 +93,7 @@ const ollCases = [
     name: "OLL 45",
     setup: "F U R U' R' F'",
     algorithm: "F R U R' U' F'",
-    image: "image/oll/oll-45.PNG",
+    image: "image/cfop/oll/oll-45.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_45"
   },
   {
@@ -101,7 +101,7 @@ const ollCases = [
     name: "OLL 51",
     setup: "f U R U' R' U R U' R' f'",
     algorithm: "f R U R' U' R U R' U' f'",
-    image: "image/oll/oll-51.PNG",
+    image: "image/cfop/oll/oll-51.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_51"
   },
   {
@@ -109,7 +109,7 @@ const ollCases = [
     name: "OLL 55",
     setup: "F R' F' U2' R U R' U R2' U2' R'",
     algorithm: "y F R U R' U' S R U R' U' S' R U R' U' F'",
-    image: "image/oll/oll-55.PNG",
+    image: "image/cfop/oll/oll-55.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_55"
   },
   {
@@ -117,7 +117,7 @@ const ollCases = [
     name: "OLL 56",
     setup: "r U r' R U R' U' R U R' U' r U' r'",
     algorithm: "y F R U R' U' R U R' U' S R U R' U' f'",
-    image: "image/oll/oll-56.PNG",
+    image: "image/cfop/oll/oll-56.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_56"
   },
   {
@@ -125,7 +125,7 @@ const ollCases = [
     name: "OLL 57",
     setup: "r U R' U' M U R U' R'",
     algorithm: "R U R' U' M' U R U' r'",
-    image: "image/oll/oll-57.PNG",
+    image: "image/cfop/oll/oll-57.PNG",
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_57"
   },
 ];

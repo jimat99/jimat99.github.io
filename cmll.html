@@ -34,9 +34,9 @@
     }
   </style>
 </head>
-<body class="text-center">
-  <div id="vueApp">
-    <navbar></navbar>
+<body class="text-center d-none">
+  <div id="vue-nav">
+    <vue-nav></vue-nav>
   </div>
 
   <div id="cmllContainer" class="container py-5">
@@ -72,7 +72,7 @@
         <li class="list-group-item"><a href="#cpSectionTitle">Corner Permutation (2 cases)</a></li>
       </ol>
 
-      <img src="image/cmll/cmll-solved.png" alt="" style="width: 150px;">
+      <img src="image/roux/cmll/cmll-solved.png" alt="" style="width: 150px;">
       <p class="mt-0"><em>Image from: <a href="https://tutorial.rouxers.com/beginners/cmll.html" target="_blank">https://tutorial.rouxers.com/beginners/cmll.html</a></em></p>
     </div>
 
@@ -81,9 +81,9 @@
     <div>
       <p class="mb-0">The first step of CMLL is corner orientation, which solve all the 4 corners on the top layer (U layer) to become oriented (all yellow on top) as shown in the image below.</p>
 
-      <img src="image/cmll/cmll-first.png" alt="" style="width: 125px;">
+      <img src="image/roux/cmll/cmll-first.png" alt="" style="width: 125px;">
       <i class="fas fa-arrow-right-long fa-2x"></i>
-      <img src="image/cmll/cmll-orientation.png" alt="" style="width: 125px;">
+      <img src="image/roux/cmll/cmll-orientation.png" alt="" style="width: 125px;">
       <p class="mt-0"><em>Image from: <a href="https://tutorial.rouxers.com/beginners/cmll.html" target="_blank">https://tutorial.rouxers.com/beginners/cmll.html</a></em></p>
     </div>
     <div id="coSection"></div>
@@ -93,9 +93,9 @@
     <div>
       <p class="mb-0">After the first step (corner orientation) which solved all the top 4 corners to become yellow facing on top. The second step of CMLL is corner permutation, which solve all the 4 corners on the top layer (U layer) to become permuted (all colors on each side completely solved) as shown in the image below.</p>
 
-      <img src="image/cmll/cmll-orientation.png" alt="" style="width: 125px;">
+      <img src="image/roux/cmll/cmll-orientation.png" alt="" style="width: 125px;">
       <i class="fas fa-arrow-right-long fa-2x"></i>
-      <img src="image/cmll/cmll-solved.png" alt="" style="width: 125px;">
+      <img src="image/roux/cmll/cmll-solved.png" alt="" style="width: 125px;">
       <p class="mt-0"><em>Image from: <a href="https://tutorial.rouxers.com/beginners/cmll.html" target="_blank">https://tutorial.rouxers.com/beginners/cmll.html</a></em></p>
     </div>
     <div id="cpSection"></div>
@@ -152,7 +152,7 @@
       return card;
     }
 
-    function renderCMLL() {
+    (function renderCMLL() {
       const coSection = document.getElementById('coSection');
       const cpSection = document.getElementById('cpSection');
 
@@ -164,9 +164,7 @@
           cpSection.appendChild(card);
         }
       });
-    }
-
-    renderCMLL();
+    })();
     // END OF RENDER CMLL
 
     function filterCases() {
@@ -216,6 +214,9 @@
       const clearBtn = document.getElementById('clearBtn');
       clearBtn.classList.toggle('d-none', input.value === '');
     }
+
+    // Show the page after all things are ready
+    document.body.classList.remove('d-none');
   </script>
 </body>
 </html>

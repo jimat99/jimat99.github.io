@@ -5,7 +5,7 @@ const pllCases = [
     goal: "Swaps three corners counter-clockwise and swaps two adjacent edges.",
     setup: "x R2' D2' R U R' D2' R U' R x'",
     algorithm: "x R' U R' D2 R U' R' D2 R2 x'",
-    image: "image/pll/aa.PNG",
+    image: "image/cfop/pll/aa.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Aa"
   },
   {
@@ -14,7 +14,7 @@ const pllCases = [
     goal: "Swaps three corners clockwise and swaps two adjacent edges.",
     setup: "x R' U R' D2' R U' R' D2' R2' x'",
     algorithm: "y' x L U' L D2 L' U L D2 L2",
-    image: "image/pll/ab.PNG",
+    image: "image/cfop/pll/ab.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Ab"
   },
   {
@@ -24,7 +24,7 @@ const pllCases = [
     setup: "x' D R U R' D' R U' R' D R U' R' D' R U R' x y'",
     algorithm: "z U2 R2 F (R U R' U' R U R' U' R U R' U') F' R2 U2 z'",
     algorithm2: "R2 U F' (R' U R U' R' U R U' R' U R U') F U' R2",
-    image: "image/pll/e.PNG",
+    image: "image/cfop/pll/e.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/E"
   },
   {
@@ -33,7 +33,7 @@ const pllCases = [
     goal: "Swaps two corners diagonally and two edges adjacent to those corners.",
     setup: "R' U' R U' R' U R U R2' F' R U R U' R' F U R y'",
     algorithm: "y R' U' F' (R U R' U' R' F R2 U' R' U' R U R') U R",
-    image: "image/pll/f.PNG",
+    image: "image/cfop/pll/f.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/F"
   },
   {
@@ -42,7 +42,7 @@ const pllCases = [
     goal: "Swaps three corners and three edges in various configurations.",
     setup: "R' U' R D' U R2' U R' U R U' R U' R2' D",
     algorithm: "y' M' U2 M U' (R U2 R' U' R U2 L' U R' U' L) U M' U2 M",
-    image: "image/pll/ga.PNG",
+    image: "image/cfop/pll/ga.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Ga"
   },
   {
@@ -51,7 +51,7 @@ const pllCases = [
     goal: "Swaps three corners and three edges in various configurations.",
     setup: "R2' U R' U R' U' R U' R2' D U' R' U R D'",
     algorithm: "y2 M' U2 M (R U2 R' U' R U2 L' U R' U' L) M' U2 M",
-    image: "image/pll/gb.PNG",
+    image: "image/cfop/pll/gb.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Gb"
   },
   {
@@ -60,7 +60,7 @@ const pllCases = [
     goal: "Swaps three corners and three edges in various configurations.",
     setup: "D' R U R' U' D R2' U' R U' R' U R' U R2'",
     algorithm: "y' M' U2 M U (L' U2 L U L' U2 R U' L U R') U' M' U2 M",
-    image: "image/pll/gc.PNG",
+    image: "image/cfop/pll/gc.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Gc"
   },
   {
@@ -69,7 +69,7 @@ const pllCases = [
     goal: "Swaps three corners and three edges in various configurations.",
     setup: "R2' U' R U' R U R' U R2' D' U R U' R' D",
     algorithm: "M' U2 M (L' U2 L U L' U2 R U' L U R') M' U2 M",
-    image: "image/pll/gd.PNG",
+    image: "image/cfop/pll/gd.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Gd"
   },
   {
@@ -78,7 +78,7 @@ const pllCases = [
     goal: "Swaps opposite edge pairs (all 4 edges in two opposite pairs).",
     setup: "M2' U' M2' U2' M2' U' M2'",
     algorithm: "M2 U' M2 U2 M2 U' M2",
-    image: "image/pll/h.PNG",
+    image: "image/cfop/pll/h.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/H"
   },
   {
@@ -87,7 +87,7 @@ const pllCases = [
     goal: "Swaps two adjacent corners and two adjacent edges (mirror of Jb).",
     setup: "L' R' U2' R U R' U2' L U' R y'",
     algorithm: "L' U2 L U L' U2 R U' L U R'",
-    image: "image/pll/ja.PNG",
+    image: "image/cfop/pll/ja.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Ja"
   },
   {
@@ -96,7 +96,7 @@ const pllCases = [
     goal: "Swaps two adjacent corners and two adjacent edges (mirror of Ja).",
     setup: "R U R2' F' R U R U' R' F R U' R'",
     algorithm: "R U2 R' U' R U2 L' U R' U' L",
-    image: "image/pll/jb.PNG",
+    image: "image/cfop/pll/jb.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Jb"
   },
   {
@@ -105,7 +105,7 @@ const pllCases = [
     goal: "Swaps two diagonally opposite corners and two pairs of adjacent edges (mirror of Nb).",
     setup: "R U R' U2' R U R2' F' R U R U' R' F R U' R' U' R U' R'",
     algorithm: "R U R' U (R U2 R' U' R U2 L' U R' U' L) U' R U' R'",
-    image: "image/pll/na.PNG",
+    image: "image/cfop/pll/na.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Na"
   },
   {
@@ -114,7 +114,7 @@ const pllCases = [
     goal: "Swaps two diagonally opposite corners and two pairs of adjacent edges (mirror of Na).",
     setup: "F r' F' r U r U' r2' D' F r U r' F' D r",
     algorithm: "L' U' L U' (L' U2 L U L' U2 R U' L U R') U L' U L",
-    image: "image/pll/nb.PNG",
+    image: "image/cfop/pll/nb.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Nb"
   },
   {
@@ -124,7 +124,7 @@ const pllCases = [
     setup: "R U2' R D R' U R D' R' U' R' U R U R' y'",
     algorithm: "y R U R' F' R U2 R' U2 R' F R U R U2 R'",
     algorithm2: "M U2 M' U' (R U2 R' U' R U2 L' U R' U' L) U M U2 M'",
-    image: "image/pll/ra.PNG",
+    image: "image/cfop/pll/ra.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Ra"
   },
   {
@@ -134,7 +134,7 @@ const pllCases = [
     setup: "R' U R U R' U' R' D' R U R' D R U2' R",
     algorithm: "R' U2 R U2 R' F R U R' U' R' F' R2",
     algorithm2: "M U2 M' U (L' U2 L U L' U2 R U' L U R') U' M U2 M'",
-    image: "image/pll/rb.PNG",
+    image: "image/cfop/pll/rb.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Rb"
   },
   {
@@ -143,7 +143,7 @@ const pllCases = [
     goal: "Swaps two adjacent corners and two adjacent edges.",
     setup: "F R U' R' U R U R2' F' R U R U' R'",
     algorithm: "R U R' U' R' F R2 U' R' U' R U R' F'",
-    image: "image/pll/t.PNG",
+    image: "image/cfop/pll/t.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/T"
   },
   {
@@ -152,7 +152,7 @@ const pllCases = [
     goal: "Swaps three edge pieces clockwise.",
     setup: "M2' U' M' U2' M U' M2'",
     algorithm: "y2 F2 U' L R' F2 L' R U' F2",
-    image: "image/pll/ua.PNG",
+    image: "image/cfop/pll/ua.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Ua"
   },
   {
@@ -161,7 +161,7 @@ const pllCases = [
     goal: "Swaps three edge pieces counterclockwise.",
     setup: "M2' U M' U2' M U M2'",
     algorithm: "y2 F2 U L R' F2 L' R U F2",
-    image: "image/pll/ub.PNG",
+    image: "image/cfop/pll/ub.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Ub"
   },
   {
@@ -170,7 +170,7 @@ const pllCases = [
     goal: "Swaps three corners and swaps one edge with another.",
     setup: "D2' R' U R D' R2' U' R' U R' U R' D' R U2' R'",
     algorithm: "M' U2 M (F R U' R' U' R U R' F' R U R' U' R' F R F') M' U2 M",
-    image: "image/pll/v.PNG",
+    image: "image/cfop/pll/v.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/V"
   },
   {
@@ -179,7 +179,7 @@ const pllCases = [
     goal: "Swaps three corners and swaps one edge with another.",
     setup: "F R' F' R U R U' R' F R U' R' U R U R' F'",
     algorithm: "F R U' R' U' R U R' F' R U R' U' R' F R F'",
-    image: "image/pll/y.PNG",
+    image: "image/cfop/pll/y.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Y"
   },
   {
@@ -188,7 +188,7 @@ const pllCases = [
     goal: "Swaps two pairs of opposite edge pieces.",
     setup: "M U2' M2' U2' M U' M2' U' M2'",
     algorithm: "y M2 U' M2 U' M' U2 M2 U2 M' U2",
-    image: "image/pll/z.PNG",
+    image: "image/cfop/pll/z.PNG",
     source: "https://speedcubedb.com/a/3x3/PLL/Z"
   },
 ];

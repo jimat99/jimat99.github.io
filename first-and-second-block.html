@@ -19,16 +19,6 @@
     #clearBtn {
       font-size: 125%;
     }
-    .cmll-case {
-      margin-bottom: 1.5rem;
-    }
-    .cmll-case img {
-      max-width: 200px;
-      height: auto;
-    }
-    .cmll-case .card-header {
-      font-weight: bold;
-    }
     .section-title {
       background-color: #e6f7f1;
     }
@@ -44,9 +34,9 @@
     /* END of Responsive algorithm text */
   </style>
 </head>
-<body class="text-center">
-  <div id="vueApp">
-    <navbar></navbar>
+<body class="text-center d-none">
+  <div id="vue-nav">
+    <vue-nav></vue-nav>
   </div>
 
   <div class="container py-5">
@@ -62,15 +52,15 @@
 
       <p class="text-danger"><b>Notice that I used blue as the front layer.</b></p>
 
-      <img src="image/cmll/block/first-block-front-left.png" alt="" style="width: 150px;">
-      <img src="image/cmll/block/first-block-bottom.png" alt="" style="width: 150px;">
+      <img src="image/roux/block/first-block-front-left.png" alt="" style="width: 150px;">
+      <img src="image/roux/block/first-block-bottom.png" alt="" style="width: 150px;">
       <p class="mt-0"><em>Image from: <a href="https://cube.rider.biz/visualcube.php" target="_blank">https://cube.rider.biz/visualcube.php</a></em></p>
     </div>
 
     <h2 class="section-title mt-3">Basic Pair Insertions</h2>
     <div>
       <p>
-        For us that are coming from CFOP, the pair insertion is similar to F2L, but with more flexibility to use the <code>M, r/Rw, l/Lw</code> moves. Here I show the basic insertions, which the other case can be solved intuitively after we learn all of these basic insertions.
+        For us that are coming from CFOP, the pair insertion is similar to F2L, but with more flexibility to use the <code>M, r/Rw, l/Lw</code> moves. Here I show the basic insertions, which the other cases can be solved intuitively after we learn all of these basic insertions.
       </p>
 
       <div id="first-block-section" class="row">
@@ -89,8 +79,8 @@
 
       <p class="text-danger"><b>Notice that I used blue as the front layer.</b></p>
 
-      <img src="image/cmll/block/second-block-front-right.png" alt="" style="width: 150px;">
-      <img src="image/cmll/block/second-block-bottom.png" alt="" style="width: 150px;">
+      <img src="image/roux/block/second-block-front-right.png" alt="" style="width: 150px;">
+      <img src="image/roux/block/second-block-bottom.png" alt="" style="width: 150px;">
       <p class="mt-0"><em>Image from: <a href="https://cube.rider.biz/visualcube.php" target="_blank">https://cube.rider.biz/visualcube.php</a></em></p>
     </div>
 
@@ -121,31 +111,27 @@
   <!-- Custom Script -->
   <script>
     // START OF RENDER CASES
-    function renderCases() {
-      let content1 = "", content2 = "";
+    (function renderCases() {
+      const template = (data) => {
+        return `<div class="col-6 col-lg-3 border" style="border-width: medium !important;">
+            <img src="${data.image}" class="img-fluid w-75" alt="F2L Step">
+            <p><pre class="algorithm-text">${data.algorithm}</pre></p>
+          </div>
+        `;
+      };
+      let contents = ["", ""];
 
       for (let i = 0; i < firstBlockCases.length; i++) {
-        content1 += `
-          <div class="col-6 col-lg-3 border" style="border-width: medium !important;">
-            <img src="${firstBlockCases[i].image}" class="img-fluid w-75" alt="F2L Step">
-            <p><pre class="algorithm-text">${firstBlockCases[i].algorithm}</pre></p>
-          </div>
-        `;
-
-        content2 += `
-          <div class="col-6 col-lg-3 border" style="border-width: medium !important;">
-            <img src="${secondBlockCases[i].image}" class="img-fluid w-75" alt="F2L Step">
-            <p><pre class="algorithm-text">${secondBlockCases[i].algorithm}</pre></p>
-          </div>
-        `;
+        contents[0] += template(firstBlockCases[i]);
+        contents[1] += template(secondBlockCases[i]);
       }
 
-      document.getElementById('first-block-section').innerHTML = content1;
-      document.getElementById('second-block-section').innerHTML = content2;
-    }
+      document.getElementById('first-block-section').innerHTML = contents[0];
+      document.getElementById('second-block-section').innerHTML = contents[1];
+    })();
 
-    renderCases();
-    // END OF RENDER CASES
+    // Show the page after all things are ready
+    document.body.classList.remove('d-none');
   </script>
 </body>
 </html>

@@ -27,9 +27,9 @@
     }
   </style>
 </head>
-<body class="text-center">
-  <div id="vueApp">
-    <navbar></navbar>
+<body class="text-center d-none">
+  <div id="vue-nav">
+    <vue-nav></vue-nav>
   </div>
 
   <div id="ollContainer" class="container py-5">
@@ -94,15 +94,13 @@
       return card;
     }
 
-    function renderOLL() {
+    (function renderOLL() {
       const container = document.getElementById('ollContainer');
       ollCases.forEach(item => {
         const card = createCard(item);
         container.appendChild(card);
       });
-    }
-
-    renderOLL();
+    })();
     // END OF RENDER OLL
 
     function filterCases() {
@@ -152,6 +150,9 @@
       const clearBtn = document.getElementById('clearBtn');
       clearBtn.classList.toggle('d-none', input.value === '');
     }
+
+    // Show the page after all things are ready
+    document.body.classList.remove('d-none');
   </script>
 </body>
 </html>

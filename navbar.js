@@ -1,6 +1,6 @@
-const vueApp = Vue.createApp({});
+const vueNav = Vue.createApp({});
 
-vueApp.component('navbar', {
+vueNav.component('vue-nav', {
   template: `
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
@@ -14,6 +14,7 @@ vueApp.component('navbar', {
             <li class="nav-item"><a class="nav-link" href="oll.html">OLL</a></li>
             <li class="nav-item"><a class="nav-link" href="first-and-second-block.html">First & Second Block</a></li>
             <li class="nav-item"><a class="nav-link" href="cmll.html">CMLL</a></li>
+            <li class="nav-item"><a class="nav-link" href="lse.html">LSE</a></li>
           </ul>
         </div>
       </div>
@@ -21,4 +22,4 @@ vueApp.component('navbar', {
   `
 });
 
-vueApp.mount('#vueApp');
+vueNav.mount('#vue-nav');

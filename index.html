@@ -27,9 +27,9 @@
     }
   </style>
 </head>
-<body class="text-center">
-  <div id="vueApp">
-    <navbar></navbar>
+<body class="text-center d-none">
+  <div id="vue-nav">
+    <vue-nav></vue-nav>
   </div>
 
   <div id="pllContainer" class="container py-5">
@@ -95,15 +95,13 @@
       return card;
     }
 
-    function renderPLL() {
+    (function renderPLL() {
       const container = document.getElementById('pllContainer');
       pllCases.forEach(item => {
         const card = createCard(item);
         container.appendChild(card);
       });
-    }
-
-    renderPLL();
+    })();
     // END OF RENDER PLL
 
     function filterCases() {
@@ -153,6 +151,9 @@
       const clearBtn = document.getElementById('clearBtn');
       clearBtn.classList.toggle('d-none', input.value === '');
     }
+
+    // Show the page after all things are ready
+    document.body.classList.remove('d-none');
   </script>
 </body>
 </html>
