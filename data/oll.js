@@ -1,7 +1,7 @@
 const ollCases = [
   {
     id: "oll21",
-    name: "OLL 21",
+    name: "OLL 21 (Cross)",
     setup: "R U R' U R U' R' U R U2' R' y'",
     algorithm: "y F R U R' U' R U R' U' R U R' U' F'",
     image: "image/cfop/oll/oll-21.PNG",
@@ -9,7 +9,7 @@ const ollCases = [
   },
   {
     id: "oll22",
-    name: "OLL 22",
+    name: "OLL 22 (Cross)",
     setup: "R' U2' R2' U R2' U R2' U2' R'",
     algorithm: "f R U R' U' f' F R U R' U' F'",
     image: "image/cfop/oll/oll-22.PNG",
@@ -17,7 +17,7 @@ const ollCases = [
   },
   {
     id: "oll23",
-    name: "OLL 23",
+    name: "OLL 23 (Tank)",
     setup: "R U2' R D R' U2' R D' R2'",
     algorithm: "R' F2 R U2 R U2 R' F2 R U2 R'",
     algorithm2: "R2 D R' U2 R D' R' U2 R'",
@@ -26,7 +26,7 @@ const ollCases = [
   },
   {
     id: "oll24",
-    name: "OLL 24",
+    name: "OLL 24 (Tank)",
     setup: "F R' F' r U R U' r'",
     algorithm: "r U R' U' r' F R F'",
     image: "image/cfop/oll/oll-24.PNG",
@@ -34,7 +34,7 @@ const ollCases = [
   },
   {
     id: "oll25",
-    name: "OLL 25",
+    name: "OLL 25 (Bowtie)",
     setup: "R' F' r U R U' r' F y'",
     algorithm: "y F' r U R' U' r' F R",
     image: "image/cfop/oll/oll-25.PNG",
@@ -42,7 +42,7 @@ const ollCases = [
   },
   {
     id: "oll26",
-    name: "OLL 26",
+    name: "OLL 26 (Anti-Sune)",
     setup: "R U R' U R U2' R' y'",
     algorithm: "R' U' R U' R' U2 R",
     image: "image/cfop/oll/oll-26.PNG",
@@ -50,7 +50,7 @@ const ollCases = [
   },
   {
     id: "oll27",
-    name: "OLL 27",
+    name: "OLL 27 (Sune)",
     setup: "R U2' R' U' R U' R'",
     algorithm: "R U R' U R U2 R'",
     image: "image/cfop/oll/oll-27.PNG",
@@ -66,7 +66,7 @@ const ollCases = [
   },
   {
     id: "oll33",
-    name: "OLL 33",
+    name: "OLL 33 (T)",
     setup: "F R' F' R U R U' R'",
     algorithm: "R U R' U' R' F R F'",
     image: "image/cfop/oll/oll-33.PNG",
@@ -74,7 +74,7 @@ const ollCases = [
   },
   {
     id: "oll43",
-    name: "OLL 43",
+    name: "OLL 43 (B)",
     setup: "f' U' L' U L f",
     algorithm: "f' L' U' L U f",
     image: "image/cfop/oll/oll-43.PNG",
@@ -82,7 +82,7 @@ const ollCases = [
   },
   {
     id: "oll44",
-    name: "OLL 44",
+    name: "OLL 44 (D)",
     setup: "f U R U' R' f'",
     algorithm: "f R U R' U' f'",
     image: "image/cfop/oll/oll-44.PNG",
@@ -90,7 +90,7 @@ const ollCases = [
   },
   {
     id: "oll45",
-    name: "OLL 45",
+    name: "OLL 45 (T)",
     setup: "F U R U' R' F'",
     algorithm: "F R U R' U' F'",
     image: "image/cfop/oll/oll-45.PNG",
@@ -98,7 +98,7 @@ const ollCases = [
   },
   {
     id: "oll51",
-    name: "OLL 51",
+    name: "OLL 51 (Line)",
     setup: "f U R U' R' U R U' R' f'",
     algorithm: "f R U R' U' R U R' U' f'",
     image: "image/cfop/oll/oll-51.PNG",
@@ -106,7 +106,7 @@ const ollCases = [
   },
   {
     id: "oll55",
-    name: "OLL 55",
+    name: "OLL 55 (Line)",
     setup: "F R' F' U2' R U R' U R2' U2' R'",
     algorithm: "y F R U R' U' S R U R' U' S' R U R' U' F'",
     image: "image/cfop/oll/oll-55.PNG",
@@ -114,7 +114,7 @@ const ollCases = [
   },
   {
     id: "oll56",
-    name: "OLL 56",
+    name: "OLL 56 (Line)",
     setup: "r U r' R U R' U' R U R' U' r U' r'",
     algorithm: "y F R U R' U' R U R' U' S R U R' U' f'",
     image: "image/cfop/oll/oll-56.PNG",
@@ -122,7 +122,7 @@ const ollCases = [
   },
   {
     id: "oll57",
-    name: "OLL 57",
+    name: "OLL 57 (H)",
     setup: "r U R' U' M U R U' R'",
     algorithm: "R U R' U' M' U R U' r'",
     image: "image/cfop/oll/oll-57.PNG",

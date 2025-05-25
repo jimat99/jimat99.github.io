@@ -19,7 +19,7 @@ const cmllCases = [
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_22"
   },
   {
-    name: "Corner Orientation Case 3 (T with headlight)",
+    name: "Corner Orientation Case 3 (Tank)",
     type: "CO",
     setup: "R U2' R D R' U2' R D' R2'",
     algorithm: "R' F2 R U2 R U2 R' F2 R U2 R'",
@@ -29,7 +29,7 @@ const cmllCases = [
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_23"
   },
   {
-    name: "Corner Orientation Case 4 (T without headlight)",
+    name: "Corner Orientation Case 4 (Tank)",
     type: "CO",
     setup: "F R' F' r U R U' r'",
     algorithm: "r U R' U' r' F R F'",

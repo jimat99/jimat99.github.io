@@ -1,0 +1,13 @@
+#goTopBtn {
+  position: fixed;
+  bottom: 40px;
+  color: #0f766e;
+  right: 30px;
+  border: none;
+  clip-path: circle(40%);
+  z-index: 99; /* Ensure it stays on top */
+  cursor: pointer;
+}
+#goTopBtn:hover {
+  background-color: #c0c0c0;
+}
