@@ -16,7 +16,7 @@
   />
 
   <!-- External CSS -->
-  <link href="css/go-top-btn.css" rel="stylesheet"/>
+  <link href="../../../css/cube-main.css" rel="stylesheet"/>
 
   <style>
     pre {
@@ -66,6 +66,7 @@
 
     <div id ="case-nav" class="row mb-3 fw-bold">
     </div>
+    </div>
   </div>
 
   <!-- Go to Top Button -->
@@ -75,16 +76,16 @@
 
   <!-- Import library -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/vue@3"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 
   <!-- Vue Component -->
-  <script src="navbar.js"></script>
+  <script src="../../../js/navbar.js"></script>
 
   <!-- Content Data -->
-  <script src="data/oll.js"></script>
+  <script src="../../../data/cube/cfop/oll.js"></script>
 
   <!-- External Script -->
-  <script src="js/go-top-btn.js"></script>
+  <script src="../../../js/go-top-btn.js"></script>
 
   <!-- Custom Script -->
   <script>
@@ -174,22 +175,15 @@
 
     // START RENDER CASES NAV
     (function renderCasesNav() {
-      let content = `<div class="col-lg"></div>`;
+      let content = "";
 
-      for (let i = 0; i < ollCases.length / 4; i++) {
-        content += `<div class="col-6 col-lg-2 d-flex flex-column text-nowrap">`;
-
-        for (let j = 0; j < 4; j++) {
-          content += `
-            <div class="p-1">
-              <a href="#${ollCases[j + (i * 4)].id}">• ${ollCases[j + (i * 4)].name}</a>
-            </div>
-          `;
-        }
-
-        content += `</div>`;
+      for (let i = 0; i < ollCases.length; i++) {
+        content += `
+          <div class="col-6 col-lg-2 p-1">
+            <a href="#${ollCases[i].id}">• ${ollCases[i].name}</a>
+          </div>
+        `;
       }
-      content += `<div class="col-lg"></div>`;
 
       document.getElementById('case-nav').innerHTML = content;
     })();

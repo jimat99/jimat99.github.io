@@ -16,7 +16,7 @@
   />
 
   <!-- External CSS -->
-  <link href="css/go-top-btn.css" rel="stylesheet"/>
+  <link href="../../../css/cube-main.css" rel="stylesheet"/>
 
   <style>
     pre {
@@ -78,7 +78,7 @@
         <li class="list-group-item"><a href="#cpSectionTitle">Corner Permutation (2 cases)</a></li>
       </ol>
 
-      <img src="image/roux/cmll/cmll-solved.png" alt="" style="width: 150px;">
+      <img src="" alt="" style="width: 150px;" class="cmll-solved">
       <p class="mt-0"><em>Image from: <a href="https://tutorial.rouxers.com/beginners/cmll.html" target="_blank">https://tutorial.rouxers.com/beginners/cmll.html</a></em></p>
     </div>
 
@@ -87,9 +87,9 @@
     <div>
       <p class="mb-0">The first step of CMLL is corner orientation, which solve all the 4 corners on the top layer (U layer) to become oriented (all yellow on top) as shown in the image below.</p>
 
-      <img src="image/roux/cmll/cmll-first.png" alt="" style="width: 125px;">
+      <img src="" alt="" style="width: 125px;" class="cmll-first">
       <i class="fas fa-arrow-right-long fa-2x"></i>
-      <img src="image/roux/cmll/cmll-orientation.png" alt="" style="width: 125px;">
+      <img src="" alt="" style="width: 125px;" class="cmll-orientation">
       <p class="mt-0"><em>Image from: <a href="https://tutorial.rouxers.com/beginners/cmll.html" target="_blank">https://tutorial.rouxers.com/beginners/cmll.html</a></em></p>
     </div>
     <div id="coSection"></div>
@@ -99,9 +99,9 @@
     <div>
       <p class="mb-0">After the first step (corner orientation) which solved all the top 4 corners to become yellow facing on top. The second step of CMLL is corner permutation, which solve all the 4 corners on the top layer (U layer) to become permuted (all colors on each side completely solved) as shown in the image below.</p>
 
-      <img src="image/roux/cmll/cmll-orientation.png" alt="" style="width: 125px;">
+      <img src="" alt="" style="width: 125px;" class="cmll-orientation">
       <i class="fas fa-arrow-right-long fa-2x"></i>
-      <img src="image/roux/cmll/cmll-solved.png" alt="" style="width: 125px;">
+      <img src="" alt="" style="width: 125px;" class="cmll-solved">
       <p class="mt-0"><em>Image from: <a href="https://tutorial.rouxers.com/beginners/cmll.html" target="_blank">https://tutorial.rouxers.com/beginners/cmll.html</a></em></p>
     </div>
     <div id="cpSection"></div>
@@ -114,16 +114,16 @@
 
   <!-- Import library -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/vue@3"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 
   <!-- Vue Component -->
-  <script src="navbar.js"></script>
+  <script src="../../../js/navbar.js"></script>
 
   <!-- Content Data -->
-  <script src="data/cmll.js"></script>
+  <script src="../../../data/cube/roux/cmll.js"></script>
 
   <!-- External Script -->
-  <script src="js/go-top-btn.js"></script>
+  <script src="../../../js/go-top-btn.js"></script>
 
   <!-- Custom Script -->
   <script>
@@ -178,6 +178,10 @@
           cpSection.appendChild(card);
         }
       });
+
+      document.querySelectorAll(".cmll-first").forEach(e => {e.src = cmllFirstImage;});
+      document.querySelectorAll(".cmll-orientation").forEach(e => {e.src = cmllOrientationImage;});
+      document.querySelectorAll(".cmll-solved").forEach(e => {e.src = cmllSolvedImage;});
     })();
     // END OF RENDER CMLL
 

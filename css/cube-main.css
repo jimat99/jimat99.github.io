@@ -1,0 +1,31 @@
+/* START OF Navbar */
+.dropdown-menu {
+  right: 0;
+  left: auto;
+}
+.dropdown-item:hover {
+  background-color: #007bff;
+  color: white;
+}
+.nav-link:hover,
+.navbar-brand:hover {
+  color: #007bff;
+}
+/* END OF Navbar */
+
+
+/* START OF Go to top button */
+#goTopBtn {
+  position: fixed;
+  bottom: 40px;
+  color: #0f766e;
+  right: 30px;
+  border: none;
+  clip-path: circle(40%);
+  z-index: 99; /* Ensure it stays on top */
+  cursor: pointer;
+}
+#goTopBtn:hover {
+  background-color: #c0c0c0;
+}
+/* END OF Go to top button */
