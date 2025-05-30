@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>3x3 OLL Algorithms</title>
+  <title>3x3 LSE Algorithms</title>
 
   <!-- CDN CSS -->
   <link
@@ -25,15 +25,18 @@
     #clearBtn {
       font-size: 125%;
     }
-    .oll-case {
+    .lse-case {
       margin-bottom: 1.5rem;
     }
-    .oll-case img {
+    .lse-case img {
       max-width: 200px;
       height: auto;
     }
-    .oll-case .card-header {
+    .lse-case .card-header {
       font-weight: bold;
+    }
+    .section-title {
+      background-color: #e6f7f1;
     }
   </style>
 </head>
@@ -42,8 +45,8 @@
     <vue-nav></vue-nav>
   </div>
 
-  <div id="ollContainer" class="container py-5">
-    <h1 class="mb-4 text-center">My 3x3 OLL Algorithms :)</h1>
+  <div id="lseContainer" class="container py-5">
+    <h1 class="mb-4 text-center">My 3x3 LSE Algorithms :)</h1>
 
     <div class="mb-4 text-center position-relative w-50 mx-auto">
       <input
@@ -64,9 +67,45 @@
       </button>
     </div>
 
-    <div id ="case-nav" class="row mb-3 fw-bold">
+    <!-- LSE explanation -->
+    <h2 class="section-title mt-3">LSE (Last Six Edges)</h2>
+    <div>
+      <p class="mb-0">The goal of LSE (Last Six Edges) is to solve all the 6 edges remaining, which is 4 edges on the top layer (U layer) + 2 edges on the bottom layer (D layer) as shown in the image below.</p>
+
+      <p class="mb-0" style="font-weight: bold;">The steps of LSE:</p>
+      <ul style="list-style: none; padding-left: 0;">
+        <li class="list-group-item"><span>4a. </span><a href="#lse4aSectionTitle">Edge Orientation (EO)</a></li>
+        <li class="list-group-item"><span>4b. </span><a href="#lse4bSectionTitle">UL & UR Edges</a></li>
+        <li class="list-group-item"><span>4c. </span><a href="#lse4cSectionTitle">3-Cycle (5 cases)</a></li>
+      </ul>
+
+      <img src="" alt="" style="width: 150px;" class="lse-solved">
+      <p class="mt-0"><em>Image from: <a href="https://tutorial.rouxers.com/beginners/lse.html" target="_blank">https://tutorial.rouxers.com/beginners/lse.html</a></em></p>
     </div>
+
+    <!-- Corner Orientation Cases -->
+    <h2 id="lse4aSectionTitle" class="section-title mt-3">Step 4a: Edge Orientation </h2>
+    <div>
+      <p class="mb-0">The first step of LSE is edge orientation, which make all the remaining 6 edges to become oriented (white/yellow on top/bottom) as shown in the image below.</p>
+
+      <img src="" alt="" style="width: 125px;" class="lse-4a-first">
+      <i class="fas fa-arrow-right-long fa-2x"></i>
+      <img src="" alt="" style="width: 125px;" class="lse-4a-orientation">
+      <p class="mt-0"><em>Image from: <a href="https://tutorial.rouxers.com/beginners/lse.html" target="_blank">https://tutorial.rouxers.com/beginners/lse.html</a></em></p>
     </div>
+    <div id="coSection"></div>
+
+    <!-- Corner Permutation Cases -->
+    <h2 id="cpSectionTitle" class="section-title mt-3">Step 2: Corner Permutation (2 cases)</h2>
+    <div>
+      <p class="mb-0">After the first step (corner orientation) which solved all the top 4 corners to become yellow facing on top. The second step of LSE is corner permutation, which solve all the 4 corners on the top layer (U layer) to become permuted (all colors on each side completely solved) as shown in the image below.</p>
+
+      <img src="" alt="" style="width: 125px;" class="lse-orientation">
+      <i class="fas fa-arrow-right-long fa-2x"></i>
+      <img src="" alt="" style="width: 125px;" class="lse-solved">
+      <p class="mt-0"><em>Image from: <a href="https://tutorial.rouxers.com/beginners/lse.html" target="_blank">https://tutorial.rouxers.com/beginners/lse.html</a></em></p>
+    </div>
+    <div id="cpSection"></div>
   </div>
 
   <!-- Go to Top Button -->
@@ -82,17 +121,18 @@
   <script src="../../../js/navbar.js"></script>
 
   <!-- Content Data -->
-  <script src="../../../data/cube/cfop/oll.js"></script>
+  <!-- <script src="../../../data/cube/roux/lse.js"></script> -->
+  <script src="../../../data/cube/roux/lse.js"></script>
 
   <!-- External Script -->
   <script src="../../../js/go-top-btn.js"></script>
 
   <!-- Custom Script -->
   <script>
-    // START OF RENDER OLL
+    // START OF RENDER LSE
     function createCard(caseData) {
       const card = document.createElement('div');
-      card.className = 'card oll-case mb-4';
+      card.className = 'card lse-case mb-4';
 
       const algs = [caseData.algorithm, caseData.algorithm2]
         .filter(Boolean)
@@ -100,7 +140,7 @@
         .join('');
 
       card.innerHTML = `
-        <div id="${caseData.id}" class="card-header bg-primary text-white">
+        <div class="card-header bg-primary text-white">
           ${caseData.name}
         </div>
         <div class="card-body">
@@ -108,27 +148,49 @@
           <pre class="bg-light p-2">${caseData.setup}</pre>
           <p><strong>Algorithm:</strong></p>
           ${algs}
+          <p><strong>Recognize:</strong></p>
+          <pre class="bg-light p-2">${caseData.recognize}</pre>
           <p><strong>Visual:</strong></p>
           <img src="${caseData.image}" alt="${caseData.name}" class="img-fluid rounded" />
-          <p class="mt-2"><em>Image from: <a href="${caseData.source}" target="_blank">${caseData.source}</a></em></p>
-        </div>
+          ${caseData.image2
+            ? `<b>OR</b>
+          <img src="${caseData.image2}" alt="${caseData.name}" class="img-fluid rounded" />`
+            : ''
+          }
+          <p class="mt-2 mb-0"><em>Image from: <a href="${caseData.source}" target="_blank">${caseData.source}</a></em></p>
+          ${caseData.image2 
+            ? `<p><em>Image from: <a href="${source2}" target="_blank">${source2}</a></em></p>` 
+            : ''
+          }
+          </div>
       `;
+
       return card;
     }
 
-    (function renderOLL() {
-      const container = document.getElementById('ollContainer');
-      ollCases.forEach(item => {
+    (function renderLSE() {
+      const coSection = document.getElementById('coSection');
+      const cpSection = document.getElementById('cpSection');
+
+      lseCases.forEach(item => {
         const card = createCard(item);
-        container.appendChild(card);
+        if (item.type === 'CO') {
+          coSection.appendChild(card);
+        } else if (item.type === 'CP') {
+          cpSection.appendChild(card);
+        }
       });
+
+      document.querySelectorAll(".lse-4a-first").forEach(e => {e.src = lse4aFirstImage;});
+      document.querySelectorAll(".lse-orientation").forEach(e => {e.src = lseOrientationImage;});
+      document.querySelectorAll(".lse-solved").forEach(e => {e.src = lseSolvedImage;});
     })();
-    // END OF RENDER OLL
+    // END OF RENDER LSE
 
     function filterCases() {
       const input = document.getElementById('searchInput');
       const filter = input.value.toLowerCase();
-      const cards = document.querySelectorAll('.oll-case');
+      const cards = document.querySelectorAll('.lse-case');
 
       cards.forEach(card => {
         const textContent = card.textContent.toLowerCase();
@@ -172,22 +234,6 @@
       const clearBtn = document.getElementById('clearBtn');
       clearBtn.classList.toggle('d-none', input.value === '');
     }
-
-    // START RENDER CASES NAV
-    (function renderCasesNav() {
-      let content = "";
-
-      for (let i = 0; i < ollCases.length; i++) {
-        content += `
-          <div class="col-6 col-lg-2 p-1">
-            <a href="#${ollCases[i].id}">• ${ollCases[i].name}</a>
-          </div>
-        `;
-      }
-
-      document.getElementById('case-nav').innerHTML = content;
-    })();
-    // END RENDER CASES NAV
 
     // Show the page after all things are ready
     document.body.classList.remove('d-none');
