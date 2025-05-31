@@ -12,16 +12,17 @@ const ollCases = [
   {
     id: "oll6",
     name: "OLL 6 (Square)",
-    setup: "r U R' U R U2' r'",
-    algorithm: "y2 l U2 L' U' L U' l'",
+    setup: "l U L' U L U2 l'",
+    algorithm: "l U2 L' U' L U' l'",
     image: `${imagePath}6.png`,
-    source: "https://cube.rider.biz/visualcube.php"
+    source: "https://cube.rider.biz/visualcube.php",
+    rotate: 180
   },
   {
     id: "oll20",
     name: "OLL 20 (Corners)",
     setup: "r U R' U' M2' U R U' R' U' M'",
-    algorithm: "y F R U R' U' R U R' U' R U R' U' F'",
+    algorithm: "r U R' U' M2' U R U' R' U' M'",
     algorithm2: "M' U' M' U' M' U' M' U M' U' M' U' M' U' M' U'",
     image: `${imagePath}20.PNG`,
     source: "https://cube.rider.biz/visualcube.php"
@@ -29,10 +30,11 @@ const ollCases = [
   {
     id: "oll21",
     name: "OLL 21 (Cross)",
-    setup: "R U R' U R U' R' U R U2' R' y'",
-    algorithm: "r U R' U' M2' U R U' R' U' M'",
+    setup: "R U R' U R U' R' U R U2' R'",
+    algorithm: "F R U R' U' R U R' U' R U R' U' F'",
     image: `${imagePath}21.PNG`,
-    source: "https://speedcubedb.com/a/3x3/OLL/OLL_21"
+    source: "https://speedcubedb.com/a/3x3/OLL/OLL_21",
+    rotate: 90
   },
   {
     id: "oll22",
@@ -62,15 +64,16 @@ const ollCases = [
   {
     id: "oll25",
     name: "OLL 25 (Bowtie)",
-    setup: "R' F' r U R U' r' F y'",
-    algorithm: "y F' r U R' U' r' F R",
+    setup: "R' F' r U R U' r' F",
+    algorithm: "F' r U R' U' r' F R",
     image: `${imagePath}25.PNG`,
-    source: "https://speedcubedb.com/a/3x3/OLL/OLL_25"
+    source: "https://speedcubedb.com/a/3x3/OLL/OLL_25",
+    rotate: 90
   },
   {
     id: "oll26",
     name: "OLL 26 (Anti-Sune)",
-    setup: "R U R' U R U2' R' y'",
+    setup: "R U R' U R U2' R' U'",
     algorithm: "R' U' R U' R' U2 R",
     image: `${imagePath}26.PNG`,
     source: "https://speedcubedb.com/a/3x3/OLL/OLL_26"
@@ -94,10 +97,11 @@ const ollCases = [
   {
     id: "oll31",
     name: "OLL 31 (B)",
-    setup: "R' F R U R' U' F' U R",
-    algorithm: "y2 S' L' U' L U L F' L' f",
+    setup: "f' L F L' U' L' U L S",
+    algorithm: "S' L' U' L U L F' L' f",
     image: `${imagePath}31.PNG`,
-    source: "https://cube.rider.biz/visualcube.php"
+    source: "https://cube.rider.biz/visualcube.php",
+    rotate: 180
   },
   {
     id: "oll32",
@@ -118,7 +122,7 @@ const ollCases = [
   {
     id: "oll34",
     name: "OLL 34 (C)",
-    setup: "F U R' U' R' F' R U R2' U' R' y2'",
+    setup: "F U R' U' R' F' R U R2' U' R' U2",
     algorithm: "F R U R' U' F' U (F' r U R' U' r' F R)",
     image: `${imagePath}34.PNG`,
     source: "https://cube.rider.biz/visualcube.php"
@@ -126,10 +130,11 @@ const ollCases = [
   {
     id: "oll36",
     name: "OLL 36 (W)",
-    setup: "F' L F L' U' L' U' L U L' U L y2'",
-    algorithm: "y2 R U R' F' R U R' U' R' F R U' R' F R F'",
+    setup: "F' L F L' U' L' U' L U L' U L",
+    algorithm: "R U R' F' R U R' U' R' F R U' R' F R F'",
     image: `${imagePath}36.PNG`,
-    source: "https://cube.rider.biz/visualcube.php"
+    source: "https://cube.rider.biz/visualcube.php",
+    rotate: 180
   },
   {
     id: "oll38",
@@ -166,11 +171,12 @@ const ollCases = [
   {
     id: "oll46",
     name: "OLL 46 (C)",
-    setup: "R' U' F R' F' R U R",
-    algorithm: "R' U' (R' F R F') U R",
-    algorithm2: "y F R U R' U' F' U' (R U R' U R U2 R')",
+    setup: "R' U' F R' F' R U R U",
+    algorithm: "y' R' U' (R' F R F') U R",
+    algorithm2: "F R U R' U' F' U' (R U R' U R U2 R')",
     image: `${imagePath}46.PNG`,
-    source: "https://cube.rider.biz/visualcube.php"
+    source: "https://cube.rider.biz/visualcube.php",
+    rotate: 90
   },
   {
     id: "oll51",
@@ -183,10 +189,11 @@ const ollCases = [
   {
     id: "oll55",
     name: "OLL 55 (Line)",
-    setup: "F R' F' U2' R U R' U R2' U2' R'",
-    algorithm: "y F R U R' U' S R U R' U' S' R U R' U' F'",
+    setup: "F R' F' U2' R U R' U R2' U2' R' U",
+    algorithm: "F R U R' U' S R U R' U' S' R U R' U' F'",
     image: `${imagePath}55.PNG`,
-    source: "https://speedcubedb.com/a/3x3/OLL/OLL_55"
+    source: "https://speedcubedb.com/a/3x3/OLL/OLL_55",
+    rotate: 90
   },
   {
     id: "oll56",

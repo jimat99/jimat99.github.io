@@ -146,13 +146,16 @@
           <pre class="bg-light p-2">${caseData.setup}</pre>
           <p><strong>Algorithm:</strong></p>
           ${algs}
-          <p><strong>Recognize:</strong></p>
-          <pre class="bg-light p-2">${caseData.recognize}</pre>
+          ${caseData.recognize
+            ? `<p><strong>Recognize:</strong></p>
+              <pre class="bg-light p-2">${caseData.recognize}</pre>`
+            : ''
+          }
           <p><strong>Visual:</strong></p>
-          <img src="${caseData.image}" alt="${caseData.name}" class="img-fluid rounded" />
+          <img src="${caseData.image}" alt="${caseData.name}" class="img-fluid rounded ${caseData.rotate ? `rotate-${caseData.rotate}` : ''}" />
           ${caseData.image2
             ? `<b>OR</b>
-          <img src="${caseData.image2}" alt="${caseData.name}" class="img-fluid rounded" />`
+          <img src="${caseData.image2}" alt="${caseData.name}" class="img-fluid rounded ${caseData.rotate ? `rotate-${caseData.rotate}` : ''}" />`
             : ''
           }
           <p class="mt-2 mb-0"><em>Image from: <a href="${caseData.source}" target="_blank">${caseData.source}</a></em></p>

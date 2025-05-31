@@ -12,11 +12,12 @@ const cmllCases = [
   {
     name: "Corner Orientation Case 1 (Cross)",
     type: "CO",
-    setup: "R U R' U R U' R' U R U2' R' y'",
-    algorithm: "y F R U R' U' R U R' U' R U R' U' F'",
+    setup: "R U R' U R U' R' U R U2' R'",
+    algorithm: "F R U R' U' R U R' U' R U R' U' F'",
     image: `${imagePath2}oll-21.PNG`,
     image2: `${imagePath}oll-21-simpler.PNG`,
-    source: "https://speedcubedb.com/a/3x3/OLL/OLL_21"
+    source: "https://speedcubedb.com/a/3x3/OLL/OLL_21",
+    rotate: 90
   },
   {
     name: "Corner Orientation Case 2 (Cross)",
@@ -49,11 +50,12 @@ const cmllCases = [
   {
     name: "Corner Orientation Case 5 (Bowtie)",
     type: "CO",
-    setup: "R' F' r U R U' r' F y'",
-    algorithm: "y F' r U R' U' r' F R",
+    setup: "R' F' r U R U' r' F",
+    algorithm: "F' r U R' U' r' F R",
     image: `${imagePath2}oll-25.PNG`,
     image2: `${imagePath}oll-25-simpler.PNG`,
-    source: "https://speedcubedb.com/a/3x3/OLL/OLL_25"
+    source: "https://speedcubedb.com/a/3x3/OLL/OLL_25",
+    rotate: 90
   },
   {
     name: "Corner Orientation Case 6 (Anti-Sune)",

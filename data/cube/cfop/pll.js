@@ -33,10 +33,11 @@ const pllCases = [
     id: "f",
     name: "F",
     goal: "Swaps two corners diagonally and two edges adjacent to those corners.",
-    setup: "R' U' R U' R' U R U R2' F' R U R U' R' F U R y'",
-    algorithm: "y R' U' F' (R U R' U' R' F R2 U' R' U' R U R') U R",
+    setup: "R' U' R U' R' U R U R2' F' R U R U' R' F U R",
+    algorithm: "R' U' F' (R U R' U' R' F R2 U' R' U' R U R') U R",
     image: `${imagePath}f.PNG`,
-    source: "https://speedcubedb.com/a/3x3/PLL/F"
+    source: "https://speedcubedb.com/a/3x3/PLL/F",
+    rotate: 90
   },
   {
     id: "ga",
@@ -87,7 +88,7 @@ const pllCases = [
     id: "ja",
     name: "Ja",
     goal: "Swaps two adjacent corners and two adjacent edges (mirror of Jb).",
-    setup: "L' R' U2' R U R' U2' L U' R y'",
+    setup: "L' U2 L U L' U2 R U' L U R'",
     algorithm: "L' U2 L U L' U2 R U' L U R'",
     image: `${imagePath}ja.PNG`,
     source: "https://speedcubedb.com/a/3x3/PLL/Ja"
@@ -96,7 +97,7 @@ const pllCases = [
     id: "jb",
     name: "Jb",
     goal: "Swaps two adjacent corners and two adjacent edges (mirror of Ja).",
-    setup: "R U R2' F' R U R U' R' F R U' R'",
+    setup: "R U2 R' U' R U2 L' U R' U' L",
     algorithm: "R U2 R' U' R U2 L' U R' U' L",
     image: `${imagePath}jb.PNG`,
     source: "https://speedcubedb.com/a/3x3/PLL/Jb"
@@ -151,20 +152,22 @@ const pllCases = [
   {
     id: "ua",
     name: "Ua",
-    goal: "Swaps three edge pieces clockwise.",
-    setup: "M2' U' M' U2' M U' M2'",
-    algorithm: "y2 F2 U' L R' F2 L' R U' F2",
+    goal: "Swaps three edge pieces counterclockwise.",
+    setup: "F2 U L R' F2 L' R U F2",
+    algorithm: "F2 U' L R' F2 L' R U' F2",
     image: `${imagePath}ua.PNG`,
-    source: "https://speedcubedb.com/a/3x3/PLL/Ua"
+    source: "https://speedcubedb.com/a/3x3/PLL/Ua",
+    rotate: 180
   },
   {
     id: "ub",
     name: "Ub",
-    goal: "Swaps three edge pieces counterclockwise.",
-    setup: "M2' U M' U2' M U M2'",
-    algorithm: "y2 F2 U L R' F2 L' R U F2",
+    goal: "Swaps three edge pieces clockwise.",
+    setup: "F2 U' L R' F2 L' R U' F2",
+    algorithm: "F2 U L R' F2 L' R U F2",
     image: `${imagePath}ub.PNG`,
-    source: "https://speedcubedb.com/a/3x3/PLL/Ub"
+    source: "https://speedcubedb.com/a/3x3/PLL/Ub",
+    rotate: 180
   },
   {
     id: "v",
@@ -188,9 +191,10 @@ const pllCases = [
     id: "z",
     name: "Z",
     goal: "Swaps two pairs of opposite edge pieces.",
-    setup: "M U2' M2' U2' M U' M2' U' M2'",
-    algorithm: "y M2 U' M2 U' M' U2 M2 U2 M' U2",
+    setup: "M2 U' M2 U' M' U2 M2 U2 M' U2",
+    algorithm: "M2 U' M2 U' M' U2 M2 U2 M' U2",
     image: `${imagePath}z.PNG`,
-    source: "https://speedcubedb.com/a/3x3/PLL/Z"
+    source: "https://speedcubedb.com/a/3x3/PLL/Z",
+    rotate: 90
   },
 ];

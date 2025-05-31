@@ -109,7 +109,7 @@
           <p><strong>Algorithm:</strong></p>
           ${algs}
           <p><strong>Visual:</strong></p>
-          <img src="${caseData.image}" alt="${caseData.name}" class="img-fluid rounded" />
+          <img src="${caseData.image}" alt="${caseData.name}" class="img-fluid rounded ${caseData.rotate ? `rotate-${caseData.rotate}` : ''}" />
           <p class="mt-2"><em>Image from: <a href="${caseData.source}" target="_blank">${caseData.source}</a></em></p>
         </div>
       `;
